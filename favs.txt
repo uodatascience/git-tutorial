@@ -1,4 +1,5 @@
 # Favorite R Packages
 ggplot2
+cowplot
 hackin.exe
 tidyverse
