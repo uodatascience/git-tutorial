@@ -175,3 +175,4 @@ https://github.com/brainhack-eugene/auto-motion
 * [Git Intro – Ariel Rokem](http://arokem.github.io/2013-09-16-ISI/lessons/git-notebook/git-for-scientists.slides.html#/1)
 * [Reproducible Workflows – Russ Poldrack](https://github.com/poldrack/reproducible-workflows)
 * [Git Cheatsheet – NDP Software](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
+* [Git: the Simple Guide](http://rogerdudler.github.io/git-guide/)
