@@ -1,2 +1,2 @@
 # Favorite R Packages
-1. ggplot2
+ggplot2
