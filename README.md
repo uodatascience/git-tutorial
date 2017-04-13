@@ -145,7 +145,7 @@ git checkout
 ## Example collaborative repo with multiple branches
 https://github.com/brainhack-eugene/auto-motion
 
-### Resources
+## Resources
 * [Git 101 – HubSpot](https://www.slideshare.net/HubSpot/git-101-git-and-github-for-beginners)
 * [Git Intro – Ariel Rokem](http://arokem.github.io/2013-09-16-ISI/lessons/git-notebook/git-for-scientists.slides.html#/1)
 * [Reproducible Workflows – Russ Poldrack](https://github.com/poldrack/reproducible-workflows)
