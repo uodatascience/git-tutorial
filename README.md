@@ -20,6 +20,20 @@ xcode-select --install
 3. Add email to list on Slack to be added to the organization
 4. Accept email invitation
 
+## Key concepts (Git 101)
+* **Snapshots** = records what the files look like at a given point in time
+  * You decide when to take snapshots
+  * History of all snapshots is retained
+* **Commit** = the act of creating a snapshot
+  * Info that's been changed
+  * A reference to the commit that came brefore it (parent commit)
+* **Repository** = collection of files and file history
+* **Cloning** = copying a repository
+* **Pulling** = grabbing changes from the original repository
+* **Pushing** = pushing changes to the original repository
+* **Branches** = offshoots of the master branch
+  * Master = typically the main branch
+
 ## Tutorial
 ### Local use
 1. Make directory on your desktop
@@ -66,44 +80,51 @@ git log
 ```
 
 ### Collaborative use
-1. Clone git-tutorial repo
+1. Update global configurations
+```bash
+git config --global --list
+git config --global user.name 'Dani Cosme'
+git config --global user.email 'dani.cosme@gmail.com'
+git config --global core.editor 'sublime'
+```
+2. Clone git-tutorial repo
 ```bash
 cd ~/Desktop
 git clone https://github.com/uodatascience/git-tutorial.git
 ```
-2. Check status
+3. Check status
 ```bash
 git status
 ```
-3. Get most up to date version of the repo
+4. Get most up to date version of the repo
 ```bash
 git pull
 ```
-4. Open favs.txt file with text editor
+5. Open favs.txt file with text editor
 ```bash
 # open in text editor app
 open /Applications/TextEdit.app favs.txt
 # open in terminal using vim
 vim favs.txt
 ```
-5. Add your favorite R package and save file
+6. Add your favorite R package and save file
 ```bash
 # add txt directly from command line
 printf "\ndplyr" >> favs.txt
 ```
-6. Add favs.txt to the staging area
+7. Add favs.txt to the staging area
 ```bash
 git add favs.txt
 ```
-7. Commit changes
+8. Commit changes
 ```bash
 git commit -m "added fav package"
 ```
-8. Push changes to github repo
+9. Push changes to github repo
 ```bash
 git push origin master
 ```
-9. Pull newest version from the github repo
+10. Pull newest version from the github repo
 ```bash
 git pull 
 ```
@@ -140,6 +161,9 @@ git checkout -b [name of new branch]
 
 # switch branches
 git checkout
+
+# check configurations
+git config --global --list
 ```
 
 ## Example collaborative repo with multiple branches
