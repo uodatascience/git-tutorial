@@ -17,7 +17,7 @@ xcode-select --install
 ## Create an account on GitHub and join UO Data Science organization
 1. Go to [GitHub](https://github.com/) to create an account
 2. Go to [UO Data Science](https://github.com/uodatascience)
-3. Add email to list on Slack to be added to the organization
+3. Add username to list on Slack to be added to the organization
 4. Accept email invitation
 
 ## Key concepts (Git 101)
