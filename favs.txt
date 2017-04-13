@@ -1,6 +1,7 @@
 # Favorite R Packages
 ggplot2
 lavaan
+cowsay
 cowplot
 hackin.exe
 
