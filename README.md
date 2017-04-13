@@ -33,6 +33,7 @@ xcode-select --install
 * **Pushing** = pushing changes to the original repository
 * **Branches** = offshoots of the master branch
   * Master = typically the main branch
+* **Merging** = combining branch with master repository
 
 ## Tutorial
 ### Local use
