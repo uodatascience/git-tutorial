@@ -1,4 +1,5 @@
 # Favorite R Packages
+tidyverse
 ggplot2
 lavaan
 cowsay
