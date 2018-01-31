@@ -20,6 +20,12 @@ xcode-select --install
 3. Add username to list on Slack to be added to the organization
 4. Accept email invitation
 
+## Why version control?
+* To avoid this:
+![Avoid this](http://phdcomics.com/comics/archive_print.php?comicid=1531)
+* To have a backup
+* To work collaboratively and avoid conflicted copies
+
 ## Key concepts (Git 101)
 * **Snapshots** = records what the files look like at a given point in time
   * You decide when to take snapshots
@@ -123,11 +129,19 @@ git commit -m "added fav package"
 ```
 9. Push changes to github repo
 ```bash
-git push origin master
+# single master branch
+git push
+
+# multiple branches
+git push origin [branch name]
 ```
 10. Pull newest version from the github repo
 ```bash
-git pull 
+# single master branch
+git pull
+
+# multiple branches
+git pull origin [branch name]
 ```
 
 ## Commonly used commands
@@ -174,5 +188,6 @@ https://github.com/brainhack-eugene/auto-motion
 * [Git 101 – HubSpot](https://www.slideshare.net/HubSpot/git-101-git-and-github-for-beginners)
 * [Git Intro – Ariel Rokem](http://arokem.github.io/2013-09-16-ISI/lessons/git-notebook/git-for-scientists.slides.html#/1)
 * [Reproducible Workflows – Russ Poldrack](https://github.com/poldrack/reproducible-workflows)
+* [Git Cheatsheet – Roger Dudler](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
 * [Git Cheatsheet – NDP Software](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
 * [Git: the Simple Guide](http://rogerdudler.github.io/git-guide/)
