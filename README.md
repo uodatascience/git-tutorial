@@ -21,10 +21,11 @@ xcode-select --install
 4. Accept email invitation
 
 ## Why version control?
-* To avoid this:
-![Avoid this](http://phdcomics.com/comics/archive_print.php?comicid=1531)
 * To have a backup
 * To work collaboratively and avoid conflicted copies
+* To avoid this:
+
+![Avoid this](http://www.phdcomics.com/comics/archive/phd101212s.gif)
 
 ## Key concepts (Git 101)
 * **Snapshots** = records what the files look like at a given point in time
