@@ -23,6 +23,7 @@ xcode-select --install
 ## Why version control?
 * To have a backup
 * To work collaboratively and avoid conflicted copies
+* To improve reproducibility
 * To avoid this:
 
 <img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="600">
