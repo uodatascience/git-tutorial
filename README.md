@@ -31,16 +31,36 @@ xcode-select --install
 * **Snapshots** = records what the files look like at a given point in time
   * You decide when to take snapshots
   * History of all snapshots is retained
+* **Staging** = which files to include in the snapshot
+  * You decide which files you want to take snapshots of
 * **Commit** = the act of creating a snapshot
   * Info that's been changed
   * A reference to the commit that came brefore it (parent commit)
 * **Repository** = collection of files and file history
+	* Local repository = exists only on your local machine
+	* Remote repository = exists on a remote website (e.g. github.com, gitlab.com, bitbucket.org)
 * **Cloning** = copying a repository
 * **Pulling** = grabbing changes from the original repository
 * **Pushing** = pushing changes to the original repository
 * **Branches** = offshoots of the master branch
   * Master = typically the main branch
 * **Merging** = combining branch with master repository
+
+## Basic process
+1. If using a remote repository, pull recent changes
+	* Get most up to date version of the repository
+	* `git pull`
+2. Make changes to a file
+3. Stage the file 
+	* Choose to take a snapshot of the changes 
+	* `git add [file]`
+4. Commit the changes
+	* Take a snapshot of the file
+	* `git commit -m "I made these changes.." [file]`
+5. If using a remote repository, push changes
+	* Apply your local changes to the repository
+	* `git push`
+6. Rinse, repeat.
 
 ## Tutorial
 ### Local use
@@ -87,7 +107,7 @@ git commit -m "added test file"
 git log
 ```
 
-### Collaborative use
+### Remote use
 1. Update global configurations
 ```bash
 git config --global --list
@@ -181,9 +201,6 @@ git checkout
 # check configurations
 git config --global --list
 ```
-
-## Example collaborative repo with multiple branches
-https://github.com/brainhack-eugene/auto-motion
 
 ## Resources
 * [Git 101 – HubSpot](https://www.slideshare.net/HubSpot/git-101-git-and-github-for-beginners)
