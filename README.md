@@ -25,7 +25,7 @@ xcode-select --install
 * To work collaboratively and avoid conflicted copies
 * To avoid this:
 
-![Avoid this](http://www.phdcomics.com/comics/archive/phd101212s.gif)
+<img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="600">
 
 ## Key concepts (Git 101)
 * **Snapshots** = records what the files look like at a given point in time
@@ -46,21 +46,19 @@ xcode-select --install
   * Master = typically the main branch
 * **Merging** = combining branch with master repository
 
-## Basic process
-1. If using a remote repository, pull recent changes
-	* Get most up to date version of the repository
-	* `git pull`
-2. Make changes to a file
-3. Stage the file 
+## Basic process for local use
+<img src="https://git-scm.com/book/en/v2/images/lifecycle.png" width="600">
+
+[Image from git-scm.com](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+
+1. Make changes to a file
+2. Stage the file 
 	* Choose to take a snapshot of the changes 
 	* `git add [file]`
-4. Commit the changes
+3. Commit the changes
 	* Take a snapshot of the file
 	* `git commit -m "I made these changes.." [file]`
-5. If using a remote repository, push changes
-	* Apply your local changes to the repository
-	* `git push`
-6. Rinse, repeat.
+4. Rinse, repeat.
 
 ## Tutorial
 ### Local use
@@ -106,6 +104,26 @@ git commit -m "added test file"
 ```bash
 git log
 ```
+
+## Basic process for remote and collaborative use
+<img src="https://camo.githubusercontent.com/2f9bc8ae52acf8f5bcf4217f4184fdcb0213eef6/68747470733a2f2f7777772e6769742d746f7765722e636f6d2f6c6561726e2f636f6e74656e742f30312d6769742f30312d65626f6f6b2f656e2f30312d636f6d6d616e642d6c696e652f30342d72656d6f74652d7265706f7369746f726965732f30312d696e74726f64756374696f6e2f62617369632d72656d6f74652d776f726b666c6f772e706e67" width="600">
+
+[Image from Dirk Dunn](https://gist.github.com/dirkdunn/2ff2784e8c780f0f7c2cc2a909fc299c)
+
+1. Pull recent changes from remote repository
+	* Get most up to date version of the repository
+	* `git pull`
+2. Make changes to a file
+3. Stage the file 
+	* Choose to take a snapshot of the changes 
+	* `git add [file]`
+4. Commit the changes
+	* Take a snapshot of the file
+	* `git commit -m "I made these changes.." [file]`
+5. Push changes to remote repository
+	* Apply your local changes to the repository
+	* `git push`
+6. Rinse, repeat.
 
 ### Remote use
 1. Update global configurations
@@ -206,6 +224,7 @@ git config --global --list
 * [Git 101 – HubSpot](https://www.slideshare.net/HubSpot/git-101-git-and-github-for-beginners)
 * [Git Intro – Ariel Rokem](http://arokem.github.io/2013-09-16-ISI/lessons/git-notebook/git-for-scientists.slides.html#/1)
 * [Reproducible Workflows – Russ Poldrack](https://github.com/poldrack/reproducible-workflows)
+* [Git: the Simple Guide – Roger Dudler](http://rogerdudler.github.io/git-guide/)
 * [Git Cheatsheet – Roger Dudler](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
 * [Git Cheatsheet – NDP Software](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
-* [Git: the Simple Guide](http://rogerdudler.github.io/git-guide/)
+* [Git Documentation](https://git-scm.com/book/en/v2)
