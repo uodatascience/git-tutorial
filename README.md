@@ -1,7 +1,7 @@
 # Git Tutorial
 
 ## Install git
-1. Open the command line
+1. Open the command line (e.g. `/Applications/Utilities/Terminal` on a mac)
 2. To check to see if you have git installed
 ```
 git --version
@@ -14,6 +14,15 @@ xcode-select --install
 
 3. For other operating systems, following [these directions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
+##  Modify your global configurations
+Replace these details with your information and specify what you'd like your default text editor to be (e.g. sublime text, nano, vim)
+```bash
+git config --global --list
+git config --global user.name 'Dani Cosme'
+git config --global user.email 'dani.cosme@gmail.com'
+git config --global core.editor 'sublime'
+```
+
 ## Create an account on GitHub and join UO Data Science organization
 1. Go to [GitHub](https://github.com/) to create an account
 2. Go to [UO Data Science](https://github.com/uodatascience)
@@ -22,6 +31,7 @@ xcode-select --install
 
 ## Why version control?
 * To have a backup
+* To see what has changed in the document over time
 * To be able to roll back to any previous version
 * To work collaboratively and avoid conflicted copies
 * To document your code and improve reproducibility
@@ -30,21 +40,31 @@ xcode-select --install
 
 <img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" width="600">
 
-## Key concepts (Git 101)
-* **Snapshots** = records what the files look like at a given point in time
+## What can be version controlled with git?
+* Plain text
+* Code
+* Git can't version control binary files (e.g. Word docs, images); it tracks that they've changed, but not what's different
+
+## Key concepts and vocabulary
+* **Snapshots** = records of what files look like at a given point in time
   * You decide when to take snapshots
   * History of all snapshots is retained
+  * Analogy – they're kind of like photos
 * **Staging** = which files to include in the snapshot
   * You decide which files you want to take snapshots of
+  * Analogy – think of this step as deciding who's going to be in a group photo; you may want to include some people, but not others
 * **Commit** = the act of creating a snapshot
   * Info that's been changed
   * A reference to the commit that came brefore it (parent commit)
+  * Analogy – think of this step as actually taking the photo with only those you chose to be in it
 * **Repository** = collection of files and file history
 	* Local repository = exists only on your local machine
 	* Remote repository = exists on a remote website (e.g. github.com, gitlab.com, bitbucket.org)
+	* Also called a "repo" for short
+	* Analogy – this is kind of like the photo album that stores all your snapshots
 * **Cloning** = copying a repository
-* **Pulling** = grabbing changes from the original repository
-* **Pushing** = pushing changes to the original repository
+* **Pulling** = grabbing changes from a remote repository
+* **Pushing** = pushing changes to a remote repository
 * **Branches** = offshoots of the master branch
   * Master = typically the main branch
 * **Merging** = combining branch with master repository
@@ -78,32 +98,53 @@ git init
 ```bash
 ls -a
 ```
-4. Get status
+4. Check status
 ```bash
 git status
 ```
-5. Create file
+5. Create file with some text
 ```bash
 printf "I <3 git" > test.txt
 ```
-6. Check status
+6. List files and check status
 ```bash
 ls 
 git status
 ```
-7. Add test.txt file to the repository
+7. Add test.txt file as a tracked file in the repository
 ```bash
 git add test.txt 
 ```
-8. Check status
+8. Check status and check what's different
+```bash
+git status
+git diff
+```
+9. Add a new line of text
+```bash
+printf "\nWhy hello there" >> test.txt
+```
+10. Check what's different
+```bash
+git diff test.txt
+```
+11. Check status again
 ```bash
 git status
 ```
-9. Save snapshot of repo by commiting changes
+12. Stage the changes made to the file
+```bash
+git add test.txt
+```
+13. Check status again
+```bash
+git status
+```
+14. Save snapshot of the file by commiting changes
 ```bash
 git commit -m "added test file"
 ```
-10. Check version history
+15. Check version history
 ```bash
 git log
 ```
@@ -115,6 +156,7 @@ git log
 
 1. Pull recent changes from remote repository
 	* Get most up to date version of the repository
+	* This will update your local files
 	* `git pull`
 2. Make changes to a file
 3. Stage the file 
@@ -124,22 +166,20 @@ git log
 	* Take a snapshot of the file
 	* `git commit -m "I made these changes.." [file]`
 5. Push changes to remote repository
-	* Apply your local changes to the repository
+	* Apply your local changes to the remote repository
 	* `git push`
 6. Rinse, repeat.
 
+
 ### Remote use
-1. Update global configurations
-```bash
-git config --global --list
-git config --global user.name 'Dani Cosme'
-git config --global user.email 'dani.cosme@gmail.com'
-git config --global core.editor 'sublime'
-```
-2. Clone git-tutorial repo
+1. If you have not already done so, clone UO Data Science git tutorial repository.
 ```bash
 cd ~/Desktop
 git clone https://github.com/uodatascience/git-tutorial.git
+```
+2. Change directories to the git tutorial folder
+```bash
+cd git_tutorial
 ```
 3. Check status
 ```bash
@@ -153,6 +193,7 @@ git pull
 ```bash
 # open in text editor app
 open /Applications/TextEdit.app favs.txt
+
 # open in terminal using vim
 vim favs.txt
 ```
@@ -186,6 +227,21 @@ git pull
 git pull origin [branch name]
 ```
 
+## Ignoring files
+Sometimes you don't want git to track your files (e.g. if you have data or binary files in the repo). To ignore specific files, create a file called `.gitignore` and list the files you want to ignore.
+```bash
+# create .gitignore file
+touch .gitignore
+
+# add files to ignore
+printf ".DS_Store" > .gitignore
+```
+
+## Merge conflicts
+We're not going to go over merge conflicts in this tutorial, but they happen when two or more people change the file at the same time and the conflicts must be resolved.
+
+More information about how to deal with merge conflicts can be found on the [Software Carpentry tutorial](http://swcarpentry.github.io/git-novice/09-conflict/)
+
 ## Commonly used commands
 ```bash
 # initialize repository
@@ -195,16 +251,22 @@ git init
 git add [file]  # single file
 git add .       # all files
 
+# remove file tracking
+git rm
+
 # make a snapshot of repository
 git commit -m "[message text]"
 
 # copy existing repository
 git clone [repo address]
 
-# get newest version of repository
+# get newest version of remote repository
 git pull
 
-# push changes to repository
+# check newest version of remote repository without merging with your local repository
+git fetch
+
+# push changes to remote repository
 git push
 
 # view history
@@ -226,6 +288,8 @@ git config --global --list
 ## Resources
 * [Git 101 – HubSpot](https://www.slideshare.net/HubSpot/git-101-git-and-github-for-beginners)
 * [Git Intro – Ariel Rokem](http://arokem.github.io/2013-09-16-ISI/lessons/git-notebook/git-for-scientists.slides.html#/1)
+* [Version Control With Git – Software Carpentry](http://swcarpentry.github.io/git-novice/)
+* [Git and Github 1 & 2 – Neurohackweek](https://github.com/neurohackweek/git-and-github)
 * [Reproducible Workflows – Russ Poldrack](https://github.com/poldrack/reproducible-workflows)
 * [Git: the Simple Guide – Roger Dudler](http://rogerdudler.github.io/git-guide/)
 * [Git Cheatsheet – Roger Dudler](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
