@@ -1,6 +1,4 @@
 # Git Tutorial
-slj ;skdfklajdf;laslfdja;s djfl;kasjdf
-kdfhkhsadfkjhaskdfhas
 
 ## Install git
 1. Open the command line (e.g. `/Applications/Utilities/Terminal` on a mac)
