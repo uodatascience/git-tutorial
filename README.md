@@ -295,3 +295,4 @@ git config --global --list
 * [Git Cheatsheet – Roger Dudler](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
 * [Git Cheatsheet – NDP Software](http://ndpsoftware.com/git-cheatsheet.html#loc=remote_repo;)
 * [Git Documentation](https://git-scm.com/book/en/v2)
+* [Happy Git with R](https://happygitwithr.com/) 
